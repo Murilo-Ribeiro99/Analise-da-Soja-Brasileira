@@ -136,10 +136,9 @@ As dimensões foram criadas para organizar os dados de forma relacional. Cada di
 3. **Dim_Categoria**: Criada para associar IDs às categorias (Valor FOB, Quilograma Líquido e Quantidade Estatística).
 
 ---
-
+```
 ### Tabela Dim_Pais
 
-```sql
 CREATE TABLE Dim_Pais (
     ID_Pais INT PRIMARY KEY,       -- Chave Primária
     Nome_Pais VARCHAR(100)         -- Nome do país
@@ -150,7 +149,7 @@ INSERT INTO Dim_Pais (ID_Pais, Nome_Pais) VALUES
 (1, 'China'),
 (2, 'Espanha'),
 (3, 'Tailândia'),
-(4, 'Turquia'),
+(4, 'Turquia');
 (5, 'Irã'),
 (6, 'México'),
 (7, 'Taiwan (Formosa)'),
@@ -258,9 +257,8 @@ INSERT INTO Dim_Pais (ID_Pais, Nome_Pais) VALUES
 (109, 'Pacífico, Ilhas do (EUA)'),
 (110, 'Croácia');
 
-### Tabela Dim_Produto
+### Tabela Dim_Categoria
 
-```sql
 CREATE TABLE Dim_Produto (
     ID_Produto INT PRIMARY KEY,        -- Chave Primária
     Codigo_NCM VARCHAR(20),            -- Código NCM do produto
@@ -274,9 +272,9 @@ INSERT INTO Dim_Produto (ID_Produto, Codigo_NCM, Descricao_NCM) VALUES
 (103, '23040010', 'Farinhas e pellets, da extração do óleo de soja'),
 (104, '15079090', 'Outros óleos de soja');
 
+
 ### Tabela Dim_Categoria
 
-```sql
 CREATE TABLE Dim_Categoria (
     ID_Categoria INT PRIMARY KEY,        -- Chave Primária
     Nome_Categoria VARCHAR(255)          -- Nome da Categoria
@@ -287,13 +285,14 @@ INSERT INTO Dim_Categoria (ID_Categoria, Nome_Categoria) VALUES
 (201, 'Valor FOB'),
 (202, 'Quilograma Líquido Milhões de Toneladas'),
 (203, 'Quantidade Estatística Milhões de Toneladas');
+```
 
-## Modelagem de Dados no Power BI
+### Modelagem de Dados no Power BI
 
-### Relacionamento Entre Tabelas
+#### Relacionamento Entre Tabelas
 
 1. **Valores ↔ Dim_Pais**  
-   - **Chave Relacional**: `Valores.ID_Pais = Dim_Pais.ID_Pais`  
+   - **Chave Relacional**: `Valores.ID_Pais = Dim_Pais.ID_Pais
    - **Cardinalidade**: Muitos para Um (* - 1)  
    - **Descrição**:  
      A tabela **Dim_Pais** contém informações únicas sobre os países de destino das exportações, como o nome do país. Na tabela **Valores**, o campo `ID_Pais` é utilizado para identificar o país correspondente, garantindo consistência e evitando duplicação de informações.
@@ -320,6 +319,8 @@ No Power BI, os seguintes elementos foram criados para análise dos resultados d
 - **Gráficos**: Representação visual de tendências e comparações.
 - **Tabelas**: Detalhamento das métricas por categoria e país.
 - **Mapas**: Visualização geográfica dos principais destinos de exportação.
+
+---
 
 ## Resultados Obtidos
 
@@ -413,37 +414,6 @@ No Power BI, os seguintes elementos foram criados para análise dos resultados d
   1. Paraguai  
   2. Venezuela  
   3. Portugal  
-
----
-
-### Soja, Mesmo Triturada, Exceto para Semeadura
-
-#### Valor FOB
-- **Total Exportado**: R$ 207.940.864.752,00  
-- **Análise Temporal (2020-2024)**:  
-  Crescimento de 35,27% em 2021, seguido por 20,46% em 2022 e 14,39% em 2023 com queda de 23,08% em 2024.  
-- **Principais Destinos**:  
-  1. China  
-  2. Espanha  
-  3. Tailândia  
-
-#### Quantidade Estatística
-- **Total Exportado**: 447,52 toneladas estatísticas  
-- **Análise Temporal (2020-2024)**:  
-  Crescimento de 4,40% em 2021, seguido por uma queda de 10,09% em 2022. Em 2023, houve um aumento de 29,92%, seguido de uma redução de 7,53% em 2024.  
-- **Principais Destinos**:  
-  1. China  
-  2. Espanha  
-  3. Tailândia  
-
-#### Quilograma Líquido
-- **Total Exportado**: 443.909,15 toneladas  
-- **Análise Temporal (2020-2024)**:  
-  Crescimento de 3,78% em 2021, seguido por uma queda de 8,57% em 2022. Em 2023, houve um aumento de 29,36%, seguido de uma redução de 7,47% em 2024.  
-- **Principais Destinos**:  
-  1. China  
-  2. Espanha  
-  3. Tailândia  
 
 ---
 
