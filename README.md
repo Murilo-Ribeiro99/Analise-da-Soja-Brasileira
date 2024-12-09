@@ -68,7 +68,7 @@ O projeto fornece insights sobre o desempenho das exportações, comparando volu
 ### Organização dos Dados
 
 1. **Separação de Tabelas**:
-   - Com base nos dados originais, foi estruturada a separação das tabelas para construção de dimensões e da tabela de valores (fatos).
+   - Com base nos dados originais, foi estruturada a separação das tabelas para construção de dimensões e da tabela de valores (fato).
 
 2. **Remoção de Colunas Irrelevantes**:
    - A coluna **Unidade Estatística (Tonelada Métrica Líquida)** foi removida por ser irrelevante para a análise.
@@ -257,7 +257,7 @@ INSERT INTO Dim_Pais (ID_Pais, Nome_Pais) VALUES
 (109, 'Pacífico, Ilhas do (EUA)'),
 (110, 'Croácia');
 
-### Tabela Dim_Categoria
+### Tabela Dim_Produto
 
 CREATE TABLE Dim_Produto (
     ID_Produto INT PRIMARY KEY,        -- Chave Primária
@@ -414,6 +414,48 @@ No Power BI, os seguintes elementos foram criados para análise dos resultados d
   1. Paraguai  
   2. Venezuela  
   3. Portugal  
+
+# Soja, mesmo triturada, exceto para semeadura
+
+## Valor FOB
+- **Total Exportado**: R$ 207.940.864.752,00
+- **Análise Temporal (2020-2024)**:
+  - Crescimento de **35,27%** em 2021
+  - Crescimento de **20,46%** em 2022
+  - Crescimento de **14,39%** em 2023
+  - Queda de **23,08%** em 2024
+- **Principais Destinos**:
+  1. **China**
+  2. **Espanha**
+  3. **Tailândia**
+
+---
+
+## Quantidade Estatística
+- **Total Exportado**: 447,52 toneladas estatísticas
+- **Análise Temporal (2020-2024)**:
+  - Crescimento de **4,40%** em 2021
+  - Queda de **10,09%** em 2022
+  - Aumento de **29,92%** em 2023
+  - Redução de **7,53%** em 2024
+- **Principais Destinos**:
+  1. **China**
+  2. **Espanha**
+  3. **Tailândia**
+
+---
+
+## Quilograma Líquido
+- **Total Exportado**: 443.909,15 toneladas
+- **Análise Temporal (2020-2024)**:
+  - Crescimento de **3,78%** em 2021
+  - Queda de **8,57%** em 2022
+  - Aumento de **29,36%** em 2023
+  - Redução de **7,47%** em 2024
+- **Principais Destinos**:
+  1. **China**
+  2. **Espanha**
+  3. **Tailândia**
 
 ---
 
