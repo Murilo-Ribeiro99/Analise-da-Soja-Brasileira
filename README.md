@@ -320,6 +320,10 @@ No Power BI, os seguintes elementos foram criados para análise dos resultados d
 - **Tabelas**: Detalhamento das métricas por categoria e país.
 - **Mapas**: Visualização geográfica dos principais destinos de exportação.
 
+- ## 📊 Dashboard de Exportações de Soja (2020–2024)
+
+![Dashboard Power BI](Dashboard.jpeg)
+
 ---
 
 ## Resultados Obtidos
